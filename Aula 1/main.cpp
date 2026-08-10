@@ -5,7 +5,6 @@ using namespace std;
 int main() {
     int x = 100;
     unsigned int y = -2; //Reduz o intervalo de valores que o tipo int suporta
-    // float z = 23 / 4.0; Conversao forçada
     float z = (float) 23 / 4; //Casting 
 
     cout << "Hello world!\n"; 
