@@ -9,7 +9,7 @@ int main() {
 
     cout << "Hello world!\n"; 
     cout << y << "\n";
-    cout << sizeof(x) << "\n"; //Exibe o tamanho do tipo int
+    cout << sizeof(x) << "\n"; //Mostra o tamanho do tipo int
     cout << z << "\n";
 
     return 0;
