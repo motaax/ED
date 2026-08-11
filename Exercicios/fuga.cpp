@@ -14,12 +14,12 @@ int main() {
 
         if (f == p) {
             cout << "N\n";
-            return 0;
+            break;
         }
 
         if (f == h) {
             cout << "S\n";
-            return 0;
+            break;
         }
     }
 
