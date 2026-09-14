@@ -8,7 +8,7 @@ int main() {
     
 
     cout << "Volume da caixa 1: " << p1.volume() << "\n";
-    cout << "Volume da caixa 2: " << p2.volume() << "\n";
+    cout << "Volume da caixa 3: " << p2.volume() << "\n";
 
     return 0;
 }
