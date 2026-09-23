@@ -2,7 +2,6 @@
 
 using namespace std;
 
-//Funcao recursiva
 void inverte_vet(double vet[], int ini, int fim) {
     //Caso base
     if(ini >= fim) return;
