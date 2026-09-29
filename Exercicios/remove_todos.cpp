@@ -4,7 +4,7 @@
 using namespace std;
 
 void remove_todos(vector<int> &v, int x) {
-    for (int i = 0; i <  (int) v.size(); i++) {
+    for (int i = 0; i < (int) v.size(); i++) {
         if (v[i] == x) {
             v.erase(v.begin() + i);
             i--;
