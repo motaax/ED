@@ -27,7 +27,7 @@ int main() {
 
     for(Bolinha &b : v4) {
         cout << b.cor << " ";
-        cout << "\n";
+        cout << "\n";vector <int> v5(v3);
     }
 
     vector <int> v5(v3); // Cria um novo vetor v5 copiando todos de elementos de v3
