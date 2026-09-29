@@ -30,7 +30,7 @@ int main() {
         cout << "\n";
     }
 
-    vector <int> v5(v3); // Cria um novo vetor v5 copiando todos oe elementos de v3
+    vector <int> v5(v3); // Cria um novo vetor v5 copiando todos de elementos de v3
 
     return 0;
 }
