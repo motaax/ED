@@ -55,6 +55,8 @@ public:
         while(m_size > 0) {
             pop_front();
         }
+
+        delete m_head;
     }
 
 };
