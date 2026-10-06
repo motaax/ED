@@ -4,7 +4,7 @@
 //Representa um nó da lista
 struct Node {
     int key;
-    Node *next;
+    Node *next = nullptr;
 };
 
 //Implementa a lista encadeada
@@ -28,6 +28,7 @@ public:
         while(atual != nullptr) {
             Node *novo = new Node;
             novo->key = atual->key;
+            novo->next = nullptr;
             cauda->next = novo;
             cauda = cauda->next;
             atual = atual->next;
