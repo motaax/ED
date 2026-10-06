@@ -90,6 +90,17 @@ public:
         m_size++;
     }
 
+    //Deixa a lista vazia
+    void clear() {
+        if(size == 0) return;
+
+        while(m_head->next != nullptr) {
+            Node *aux = m_head->next;
+            m_head->next = aux->next;
+            delete aux;
+        }
+    }
+
     //Destrutor: libera todos os nós
     ~Lista_Encadeada() {
         while(m_size > 0) {
