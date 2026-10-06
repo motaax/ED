@@ -19,6 +19,20 @@ public:
         m_head = new Node;
         m_head->next = nullptr; 
     }
+
+    //Construtor de cópia
+    Lista_Encadeada(const Lista_Encadeada &lst) : Lista_Encadeada() {
+        this->m_size = lst.m_size;
+        Node *atual = lst.m_head->next;
+        Node *cauda = this->m_head;
+        while(atual != nullptr) {
+            Node *novo = new Node;
+            novo->key = atual->key;
+            cauda->next = novo;
+            cauda = cauda->next;
+            atual = atual->next;
+        }
+    }
     
     //Insere um valor no inicio da lista
     void push_front(int value) {
@@ -61,8 +75,19 @@ public:
     }
 
     //Insere um elemento no final da lista
-    void push_back() {
-        
+    void push_back(int value) {
+        Node *aux = m_head;
+
+        while(aux->next != nullptr) {
+            aux = aux->next;
+        }
+
+        Node *novo = new Node;
+        novo->key = value;
+        novo->next = nullptr;
+
+        aux->next = novo;
+        m_size++;
     }
 
     //Destrutor: libera todos os nós
