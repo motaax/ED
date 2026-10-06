@@ -4,11 +4,15 @@
 using namespace std;
 
 int main() {
-    Lista_Encadeada lista; //Cria uma lista vazia
+    Lista_Encadeada l1; //Cria uma lista vazia
 
-    lista.push_front(3);
-    lista.push_front(2);
-    lista.print();
+    for(int i = 0; i < 10; i++) {
+        l1.push_back(i);
+    }
 
+    Lista_Encadeada l2 (l1); //Cria uma lista l2 copiada da lista l1
+
+    l2.print();
+    
     return 0;
 }
