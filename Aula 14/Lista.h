@@ -99,6 +99,8 @@ public:
             m_head->next = aux->next;
             delete aux;
         }
+
+        m_size = 0;
     }
 
     //Destrutor: libera todos os nós
