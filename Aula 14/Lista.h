@@ -60,6 +60,11 @@ public:
         return m_size == 0;
     }
 
+    //Insere um elemento no final da lista
+    void push_back() {
+        
+    }
+
     //Destrutor: libera todos os nós
     ~Lista_Encadeada() {
         while(m_size > 0) {
