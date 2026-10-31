@@ -1,6 +1,5 @@
 #ifndef FORWARDLIST_H
 #define FORWARDLIST_H
-#include <iostream>
 #include "Iterator.h"
 #include "ConstIterator.h"
 #include "Node.h"
@@ -11,42 +10,35 @@ private:
     int m_size;   // numero de elementos na lista
 
 public:
-    // retorna um Iterator apontando 
-    // para o primeiro elemento da lista
+    // retorna um Iterator apontando para o primeiro elemento
     Iterator begin() {
         return Iterator(m_head->next);
     }
 
-    // retorna um Iterator apontando para a posicao 
-    // anterior ao primeiro elemento da lista.
+    // retorna um Iterator apontando para a posicao anterior ao primeiro elemento
     Iterator before_begin() {
         return Iterator(m_head);
     }
 
-    // retorna um Iterator para a posicao 
-    // após o ultimo elemento
+    // retorna um Iterator para a posicao após o ultimo elemento
     Iterator end() {
         return Iterator(nullptr);
     }
 
-    // retorna um ConstIterator apontando 
-    // para o primeiro elemento da lista
+    // retorna um ConstIterator apontando para o primeiro elemento da lista
     ConstIterator begin() const {
         return ConstIterator(m_head->next);
     }
 
-    // retorna um ConstIterator apontando para a posicao 
-    // anterior ao primeiro elemento da lista.
+    // retorna um ConstIterator apontando para a posicao anterior ao primeiro elemento da lista
     ConstIterator before_begin() const {
         return ConstIterator(m_head);
     }
 
-    // retorna um ConstIterator para a posicao 
-    // apos o ultimo elemento
+    // retorna um ConstIterator para a posicao apos o ultimo elemento
     ConstIterator end() const {
         return ConstIterator(nullptr);
     }
-
 
     // Construtor default: cria lista vazia
     ForwardList() {
@@ -92,19 +84,18 @@ public:
         }
     }    
 
-    // Destrutor: libera todos os nos, inclusive o sentinela
+    // Destrutor: libera todos os nos
     ~ForwardList() {
         clear();
         delete m_head;
     }
 
-    // Sobercarga do operador de atribuicao
     // Faz uma copia da lista passada como entrada
     ForwardList& operator=(const ForwardList& lst) {
         if (this == &lst) {
             return *this;
         }
-        this->clear(); // limpa a minha lista
+        this->clear(); // limpa a lista
         Node* atual = lst.m_head->next;
         Node* ultimo = this->m_head;
         while(atual != nullptr) {
@@ -116,7 +107,6 @@ public:
         return *this;
     }
     
-    // Sobrecarga do operador<< 
     // Esse operador permite imprimir o conteudo da lista no terminal cout
     friend std::ostream& operator<<(std::ostream& out, const ForwardList& lst) {
         out << "[ ";
@@ -127,35 +117,25 @@ public:
         return out;
     }
 
-
-    // Retorna uma referencia para o primeiro elemento da lista.
-    // Essa funcao nao checa se a lista esta vazia, 
-    // ela apenas retorna o que estiver na frente.
+    // Retorna uma referencia para o primeiro elemento da lista
     int& front();
 
-    // Retorna uma referencia constante para o primeiro elemento da lista.
-    // Essa funcao nao checa se a lista esta vazia, 
-    // ela apenas retorna o que estiver na frente.
+    // Retorna uma referencia constante para o primeiro elemento da lista
     const int& front() const;
 
     // Insere um elemento ao final da lista
     void push_back(int value);
 
-    // Remove o ultimo elemento da lista, se houver.
+    // Remove o ultimo elemento da lista
     void pop_back();
 
-    // Retorna uma referencia para o ultimo elemento da lista.
-    // Essa funcao nao checa se a lista esta vazia, 
-    // ela apenas retorna o que estiver atrás.
+    // Retorna uma referencia para o ultimo elemento da lista
     int& back();
     
-    // Retorna uma referencia constante para o ultimo elemento da lista.
-    // Essa funcao nao checa se a lista esta vazia, 
-    // ela apenas retorna o que estiver atrás.
+    // Retorna uma referencia constante para o ultimo elemento da lista
     const int& back() const;
 
     // Construtor de copia: recebe uma referencia para uma ForwardList
-    // lst e inicializa a nova lista com os elementos de lst.
     ForwardList(const ForwardList& lst);
 
 };

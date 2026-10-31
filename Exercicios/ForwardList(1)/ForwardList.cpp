@@ -38,7 +38,7 @@ void ForwardList::push_back(int val) {
     m_size++;
 }
 
-// Deleta o último elemento da lista, se houver
+// Deleta o último elemento da lista
 void ForwardList::pop_back() {
     if (m_head->next == nullptr) return; // Lista vazia
 

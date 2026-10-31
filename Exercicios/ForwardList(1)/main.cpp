@@ -1,4 +1,3 @@
-// NAO MEXA NESTE ARQUIVO, ELE JA ESTA PRONTO PARA SER USADO PELO MOODLE
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -6,8 +5,7 @@
 #include "ForwardList.h"
 using namespace std;
 
-int main() 
-{
+int main() {
 	vector<ForwardList> listas; // um vector de listas
 	
 	while(true) {
@@ -85,5 +83,6 @@ int main()
 			cout << "comando inexistente" << endl;
 		}
 	}
+	
 	return 0;
 }
