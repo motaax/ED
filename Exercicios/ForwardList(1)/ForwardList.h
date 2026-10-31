@@ -3,6 +3,7 @@
 #include "Iterator.h"
 #include "ConstIterator.h"
 #include "Node.h"
+#include <iostream>
 
 class ForwardList {
 private:
