@@ -58,7 +58,6 @@ Para executar a interface interativa:
 
 ```text
 --- TAD Lista Circular Duplamente Encadeada ---
-Digite 'help' para ver a lista de comandos disponiveis.
 
 > push_back 10
 Elemento 10 inserido com sucesso.
