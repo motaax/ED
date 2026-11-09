@@ -4,7 +4,22 @@
 using namespace std;
 
 queue <int> intercala(queue <int> &f1, queue <int> &f2) {
+    int total = f1.size() + f2.size();
+    
+    queue <int> f_res;
+    for(int i = 1; i <= total; i++) {
+        if(!f1.empty()) {
+            f_res.push(f1.front());
+            f1.pop();
+        }
 
+        if(!f2.empty()) {
+            f_res.push(f2.front());
+            f2.pop();
+        }
+    }
+
+    return f_res;
     
 }
 
