@@ -8,23 +8,22 @@ using namespace std;
 bool bemFormada(const string &expressao) {
     stack<char> pilha;
 
-    // Percorre cada caractere 'c' dentro da string 'expressao'
     for (char c : expressao) {
-        // 1. Se leu '(' ou '[', empilha o símbolo lido[cite: 1]
+        // 1. Se leu '(' ou '[', empilha 
         if (c == '(' || c == '[') {
             pilha.push(c);
         } 
-        // 2. Se leu ']', verifica se o topo é '[' e desempilha[cite: 1]
+        // 2. Se leu ']', verifica se o topo é '[' e desempilha
         else if (c == ']') {
             if (pilha.empty() || pilha.top() != '[') {
                 return false; // Malformada[cite: 1]
             }
             pilha.pop();
         } 
-        // 3. Se leu ')', verifica se o topo é '(' e desempilha[cite: 1]
+        // 3. Se leu ')', verifica se o topo é '(' e desempilha
         else if (c == ')') {
             if (pilha.empty() || pilha.top() != '(') {
-                return false; // Malformada[cite: 1]
+                return false; // Malformada
             }
             pilha.pop();
         }
