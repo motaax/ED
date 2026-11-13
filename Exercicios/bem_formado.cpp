@@ -16,7 +16,7 @@ bool bemFormada(const string &expressao) {
         // 2. Se leu ']', verifica se o topo é '[' e desempilha
         else if (c == ']') {
             if (pilha.empty() || pilha.top() != '[') {
-                return false; // Malformada[cite: 1]
+                return false; // Malformada
             }
             pilha.pop();
         } 
