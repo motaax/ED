@@ -8,7 +8,7 @@ struct Node {
     Node *left;
     Node *right;
 
-    // construtor do nó
+    // Construtor do nó
     Node(int k, Node *l, Node *r) {
         key = k;
         left = l;
@@ -18,15 +18,13 @@ struct Node {
 
 class Tree {
 private:
-    Node *m_root; // ponteiro par a raiz da árvore
+    Node *m_root; // Ponteiro para a raiz da árvore
 public:
     // Construtor default: Cria uma árvore vazia 
     Tree() {
         m_root = nullptr;
     }
-    // Construtor 2: recebe como entrada um valor e mais 
-    // duas outras árvores, e cria uma terceira árvore com o
-    // que foi recebido 
+    // Construtor 2: recebe como entrada um valor e mais duas outras árvores, e cria uma terceira árvore com o que foi recebido 
     Tree(int valor, Tree& t1, Tree& t2) {
         m_root = new Node(valor, nullptr, nullptr); 
         m_root->left = t1.m_root;
@@ -34,16 +32,23 @@ public:
         m_root->right = t2.m_root;
         t2.m_root = nullptr; 
     }
-    // Versão pública da função size.
+    // Versão pública da função size
     int size() {
         return size_recursiva(m_root);
     }
     bool contains(int valor) {
         return contains_rec(valor, m_root);
     }
+    //Função pública que deixa a árvore vazia
+    void clear() {
+        apagar(m_root);
+        m_root = nullptr;
+    }
+    ~Tree() {
+        clear();
+    }
 private:
-    // Função recursiva que calcula quantos nós têm 
-    // na subárvore cuja raiz é passada como parâmetro
+    // Função recursiva que calcula quantos nós têm na subárvore
     int size_recursiva(Node *node) {
         if(node == nullptr) { // Caso base: vazia
             return 0;
@@ -51,9 +56,7 @@ private:
             return 1 + size_recursiva(node->left) + size_recursiva(node->right);
         }
     }
-    // Função privada recursiva que recebe como entrada um valor 
-    // e a raiz de uma árvore e retorna true se e somente 
-    // se o valor está na árvore.
+    // Função privada recursiva que recebe como entrada um valor e a raiz de uma árvore e retorna true se e somente se o valor está na árvore.
     bool contains_rec(int v, Node *node) {
         if(node == nullptr) { // Caso base: árvore vazia
             return false;
@@ -64,9 +67,41 @@ private:
         }
     }
 
-    //Função recursiva que recebe a raiz de uma subárvore e libera todos os nós dessa subárvore
+    void pre_ordem(Node *node) {
+        if(node != nullptr) {
+            cout << node << "\n";
+            pre_ordem(node-> left);
+            pre_ordem(node-> right);
+        }
+    }
+
+    void pos_ordem(Node *node) {
+        if(node != nullptr) {
+            pos_ordem(node-> left);
+            pos_ordem(node-> right);
+            cout << node << "\n"; 
+        }
+    }
+
+    void ordem_simetrica(Node *node) {
+        if(node != nullptr) {
+            ordem_simetrica(node-> left);
+            cout << node << "\n";
+            ordem_simetrica(node-> right);
+        }
+    }
+
     void clear(Node *node) {
-        
+        delete node;
+    }
+
+    //Função recursiva que recebe a raiz de uma subárvore e libera todos os nós dessa subárvore
+    void apagar(Node *node) {
+        if(node != nullptr) {
+            apagar(node->left);
+            apagar(node-> right);
+            delete node;
+        }
     }
 };
 
